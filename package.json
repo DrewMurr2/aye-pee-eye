@@ -1,0 +1,14 @@
+{
+  "name": "aye-pee-eye",
+  "version": "1.0.0",
+  "description": "aye-pee-eye pairs with the aye-pee-eye-client to make api client side endpoints as easy as adding a function in the api folder on the server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1"
+  },
+  "author": "Drew Murr",
+  "license": "ISC"
+}
