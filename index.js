@@ -9,6 +9,7 @@ module.exports = function (options) {
 
 
     let api_file_names_with_extensions = retrieve_api_file_names()
+    api_file_names_with_extensions = swith_backslashes_to_forward_for_all_filenames(api_file_names_with_extensions)
     let api_file_names = remove_extensions_from_filenames(api_file_names_with_extensions)
     mount_api_endpoints(api_file_names, root, express, app)
     mount_getMethods_endpoint(api_file_names, root, express, app)
@@ -31,6 +32,9 @@ let retrieve_api_file_names = () => {
     return files
 }
 
+
+let swith_backslashes_to_forward_for_all_filenames = file_names => file_names.map(file_name => swith_backslashes_to_forward_for_one(file_name))
+let swith_backslashes_to_forward_for_one = file_name => file_name.split('\\').join('/')
 let remove_api_prefix = api_endpoint => api_endpoint.slice(3, api_endpoint.length)
 let remove_extensions_from_filenames = file_names => file_names.map(file_name => remove_extension_from_filename(file_name))
 let remove_extension_from_filename = file_name => file_name.split('.')[0]
