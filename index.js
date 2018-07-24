@@ -45,7 +45,7 @@ let mount_api_endpoints = (api_file_names, root, express, app) => {
         var router = express.Router();
         router.use(bodyParser.json())
         let { api, middleware } = require(root + '/api' + api_file)
-        router.post('/', api)
+        middleware ? router.post('/', middleware, api) : router.post('/', api)
         app.use(api_file, router)
     })
 }
