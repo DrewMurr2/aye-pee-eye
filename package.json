@@ -1,6 +1,6 @@
 {
   "name": "aye-pee-eye",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "aye-pee-eye pairs with the aye-pee-eye-client to make api client side endpoints as easy as adding a function in the api folder on the server",
   "main": "index.js",
   "scripts": {
